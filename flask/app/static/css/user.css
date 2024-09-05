@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kanit');
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,900|Montserrat|Roboto");
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: black;
+    margin :0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.profile-tabshow{
+    color: white;
+}
+
+.container {
+    background: white;
+    width: 540px;
+    height: 800px;
+    margin : 0 auto;
+    position: relative;
+    margin-top: 10%;
+    box-shadow: 2px 5px 20px #946CAC;
+}
+
+.leftbox {
+    float: left;
+    top : -3%;
+    left: 5%;
+    height: 600px;
+    position: absolute;
+    width: 15%;
+    height:  110%;
+    background: black;
+    box-shadow: 3px 3px 10px #0F041C;
+    border : 1px solid white;
+}
+
+.rightbox {
+    font-size: 10px;
+    width: 60%;
+    margin-left:27% ;
+}
+
+
+nav a {
+    padding: 50px 27px;
+    list-style: none;
+    color: white;
+    display :block;
+    transition: all .3s ease-in-out;
+}
+
+nav a:hover {
+    color: #946CAC;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+nav a:first-child{
+    margin-top: 5px;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: rgb(89, 89, 89);
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.input, p {
+    border: 0;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border-bottom: 1px solid black;
+    width: 80%;
+}
+
+
+.btn{
+    text-transform: uppercase;
+    font-size: 20px;
+    border: 0;
+    color: white;
+    background-color: black;
+    padding: 7px 15px;
+    box-shadow: 0px 2px 4px 0px #946CAC;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+/*----navbar----*/
+header {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #fff;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.logo_img{
+    height: 70px;
+    width: 70px;
+    padding: 10px 20px;
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li a {
+    list-style: none;
+    color: black;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: 0.2s;
+    margin: 0 5px;
+}
+header nav ul li a:hover{
+    color: white;
+    background: black;
+}
+header li{
+    text-decoration: none;
+    list-style: none;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+    border-bottom-color: black;
+}
+.hamburger {
+    cursor: pointer;
+    display: none;
+    padding: 10px;
+    margin: 10px;
+}
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 0;
+    background: white;
+    
+}
+
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        left: -100%;
+        background: white;
+        padding: 0px;
+        transition: 0.3s;
+        
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+    }
+    header nav ul li a {
+        margin: 0px 0;
+        background: #fff;
+    }
+    body {
+        padding: 0rem 0;
+    }
+
+    .login-card {
+        position: static;
+        width: 280px;
+        padding: 2rem;
+        
+    }
+    .login-card input[type="text"],
+    .login-card input[type="password"],
+    .login-card input[type="email"] {
+    width: 70%;
+    }
+}

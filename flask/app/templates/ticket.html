@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="navbar.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0">
+    <link rel="stylesheet" href="static/css/ticket.css">
+    <title>Ticket</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="logo_img" src="static/img/logo.png">
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+              <li>
+                <a class="nav_link" href="{{ url_for('home') }}" class="active">home</a>
+              </li>
+              {% if current_user.is_authenticated %}
+              <li>
+                <a class="nav_link" href="{{ url_for('booking') }}" class="active">Booking</a>
+              </li>
+              <li>
+                <a class="nav_link" href="{{ url_for('ticket') }}">Ticket</a>
+              </li>
+              <li>
+                <a class="nav_link" href="{{ url_for('logout') }}">Log out</a>
+              </li>
+              {% endif %}
+              {% if not current_user.is_authenticated %}
+              <li>
+                <a class="nav_link" href="{{ url_for('login') }}">Log in</a>
+              </li>
+              {%endif%}
+              {% if current_user.is_authenticated %}
+              <li>
+                <a class="nav_link" href="{{ url_for('user_settings') }}">
+                    <span class="form-item-icon material-symbols-rounded">person</span>
+                </a>
+              </li>
+              {%endif%}
+                
+            </ul>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div class="form-item-icon material-symbols-rounded">menu</div>
+        </label>
+    </header>
+<div class="ticket-container">
+  {%for content in contents %}
+  <div class="ticket-card card-left">
+    <div class="barname">safezonebar</div>
+    <div class="name">
+      <div class="fullname">{{content['firstname']}}</div>
+      <div class="namelabel">NAME</div>
+    </div>
+    <div class="all-seat">
+      <div class="seat">{{content['table_id']}}</div>
+      <div class="seatlabel">SEAT</div>
+    </div>
+    <div class="time">
+      <div class="t">20:00</div>
+      <div class="timelabel">TIME</div>
+    </div>
+    <div class="date">
+      <div class="bookdate">{{content['date']}}</div>
+      <div class="datelable">DATE</div>
+    </div>
+    <div class="txt">
+      <div class="txt1">**Come pick up your table at the bar at 8:00 p.m. If you don't arrive to pick up your table before 8:00 p.m. or 8:15 p.m. The bar will consider that the table is out of reserve. And the bar asks for permission to release tables to walk-in customers.**</div>
+    </div>
+  </div>
+  <div class="ticket-card card-right">
+    <img class="ticket-logo" src="static/img/logo.png">
+    <div class="number">
+      <div class="number-seat">{{content['table_id']}}</div>
+      <div class="numberlabel">seat</div>
+
+    </div>
+    <div class="barcode"></div>
+  </div>{%endfor%}
+</div>
+
+</body>
+</html>

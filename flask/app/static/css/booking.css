@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: black;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+
+}
+
+.booking-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+
+.booking-card{
+    width: 1200px;
+    height: fit-content;
+    border: 0.4 solid black;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: 'poppins', 'sans-serif';
+    /* overflow: auto; */
+    max-height: 96vh;
+    background: black;
+}
+
+.booking-selector{
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+
+.title {
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #F4D03F ;
+    font-family: 'poppins', 'sans-serif';
+    font-size: 30px;
+}
+
+.seats {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 150px;
+    position: relative;
+
+}
+
+.status {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}    
+
+.seats::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.bar{
+    margin-top: 400px;
+    
+    width: 100%;
+    height: 150%;
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    position: relative;
+    margin-right: 54px;
+    color: white;
+    font-family: 'poppins', 'sans-serif';
+    font-size: 40px;
+    width: 100px;
+    height: 200px;
+    background: linear-gradient(to bottom, #66CC66,#FFCC33 );
+}
+
+.st{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* margin-right: 40px; */
+    color: white;
+    font-family: 'poppins', 'sans-serif';
+    font-size: 40px;
+    width: 600px;
+    height: 100px;
+    background: linear-gradient(to right, #66CC66, #FFCC33);
+}
+
+.item {
+    font-size: 20px;
+    font-family: 'poppins', 'sans-serif';
+    color:white;
+    position: relative;
+}
+
+.item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -12px;
+    transform: translate(0, -50%);
+    width: 10px;
+    height: 10px;
+    background: rgb(255, 255, 255);
+    outline: 0.2mm solid rgb(120, 120, 120);
+    border-radius: 0.3mm;
+}
+
+.item:nth-child(2)::before {
+    background: rgb(180, 180, 180);
+    outline: none;
+}
+
+.item:nth-child(3)::before {
+    background: rgb(28, 185, 120);
+    outline: none;
+}
+
+.all-seats {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 15px;
+    margin: 0px 0;
+    margin-top: 20px;
+    position: relative;
+    font-family: 'poppins', 'sans-serif';
+    font-size: 10px;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 0.5mm;
+    outline: 0.3mm solid rgb(180, 180, 180);
+    cursor: pointer;
+    font-family: 'poppins', 'sans-serif';
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-seats input:checked + label {
+    background: rgb(28, 185, 120);
+    outline: none;
+}
+
+input.all-seats.hidden-input {
+    display: none;
+}
+
+.seat.booked {
+    background: rgb(170, 170, 170);
+    cursor: not-allowed;
+    outline: none;
+    pointer-events: none;
+}
+
+input.dt{
+    margin-top: 50px;
+    background: white;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 5px 15px 5px 15px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: 'poppins', 'sans-serif';
+    font-size: 20px;
+}
+
+input:not(.dt) {
+    display: none;
+}
+
+.book-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'poppins', 'sans-serif';
+    font-size: 20px;
+    margin: 30px auto;
+    padding: 10px 60px; 
+    border-radius: 30px;
+    background-color: #75b495;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    
+}
+
+.book-btn:hover {
+    background-color: #00cc66;
+}
+
+.txt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'poppins', 'sans-serif';
+    font-size: 15px;
+    color: white;
+}
+
+/*----navbar----*/
+header {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #fff;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.logo_img{
+    height: 70px;
+    width: 70px;
+    padding: 10px 20px;
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li a {
+    list-style: none;
+    color: black;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: 0.2s;
+    margin: 0 5px;
+}
+header nav ul li a:hover{
+    color: white;
+    background: black;
+}
+header li{
+    text-decoration: none;
+    list-style: none;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+    border-bottom-color: black;
+}
+.hamburger {
+    cursor: pointer;
+    display: none;
+    padding: 10px;
+    margin: 10px;
+}
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 0;
+    background: white;
+    
+}
+.nav_link{
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        left: -100%;
+        background: white;
+        padding: 0px;
+        transition: 0.3s;
+        
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+    }
+    header nav ul li a {
+        margin: 0px 0;
+        background: #fff;
+    }
+    body {
+        padding: 0rem 0;
+    }
+
+    .login-card {
+        position: static;
+        width: 280px;
+        padding: 2rem;
+        
+    }
+    .login-card input[type="text"],
+    .login-card input[type="password"],
+    .login-card input[type="email"] {
+    width: 70%;
+    }
+}

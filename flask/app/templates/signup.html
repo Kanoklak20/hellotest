@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/signup.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0">
+    <title>Register</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="logo_img" src="static/img/logo.png">
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li>
+                    <a class="nav_link" href="{{ url_for('home') }}" class="active">home</a>
+                </li>
+                {% if current_user.is_authenticated %}
+                <li>
+                    <a class="nav_link" href="{{ url_for('booking') }}" class="active">Booking</a>
+                </li>
+                <li>
+                    <a class="nav_link" href="{{ url_for('ticket') }}">Ticket</a>
+                </li>
+                <li>
+                    <a class="nav_link" href="{{ url_for('logout') }}">Log out</a>
+                </li>
+                {% endif %}
+                {% if not current_user.is_authenticated %}
+                <li>
+                    <a class="nav_link" href="{{ url_for('login') }}">Log in</a>
+                </li>
+                {%endif%}
+                {% if current_user.is_authenticated %}
+                <li>
+                    <a class="nav_link" href="{{ url_for('user_settings') }}">
+                        <span class="form-item-icon material-symbols-rounded">person</span>
+                    </a>
+                </li>
+                {%endif%}
+            </ul>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div class="form-item-icon material-symbols-rounded">menu</div>
+        </label>
+    </header>
+    <div class="signup-container">
+        <div class="title">Register
+            <form action="#" method="POST">
+                <div class="user-details">
+                    <div class="input-box">
+                        <label>Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-box">
+                        <label>Surname</label>
+                        <input type="text" id="surname" name="surname" placeholder="Enter your surname" required>
+                    </div>
+                    <div class="input-box">
+                        <label>Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                        <label>Username</label>
+                        <input type="text" id="user" name="user" placeholder="Enter your username" required>
+                    </div>
+                    <div class="input-box">
+                        <label>Phone Number</label>
+                        <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="input-box">
+                        <label>Date of Birth</label>
+                        <input type="date" id="date" name="date" placeholder="Enter your birth date" required>
+                    </div>
+                    <div class="input-box">
+                        <label>Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="input-box">
+                        <label>Confirm Password</label>
+                        <input type="password" id="cfpassword" name="cfpassword" placeholder="Confirm your password" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" placeholder="Confirm your password" value="customer" hidden="hidden">
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Sign Up"></input>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="navbar.js"></script>
+    </div>
+    
+</body>
+</html>

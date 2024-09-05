@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+body {
+    background: black;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+
+.ticket-container{
+	width: 27em;
+	margin: 3em auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ticket-card{
+	background: linear-gradient(to bottom,
+			#99FF00 0%,
+			#99FF00 26%,
+			#ecedef 26%,
+			#ecedef 100%);
+	height: 13em;
+	float: left;
+	position: relative;
+	padding: 1em;
+	margin-top: 100px;
+}
+
+.card-left{
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	width: 16em;
+	position: relative;
+}
+
+.card-right{
+	width: 6.5em;
+	border-left: 0.18em dashed #fff;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.barname{
+	font-size: 1.5em;
+	margin-top: 0;
+	text-align: center;
+	font-weight: bold;
+}
+
+.name,
+.all-seat,
+.time,
+.date,
+.txt{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.namelabel,
+.seatlabel,
+.datelable,
+.timelabel{
+	font-size: 0.9em;
+	color: #919b9b;
+	margin: 0;
+}
+
+.fullname,
+.seat,
+.bookdate,
+.t{
+	font-size: 1em;
+	color: black;
+}
+
+.name{
+	margin: 1.5em 0 0 0 ;
+}
+
+.all-seat{
+	margin: 0.45em 0 0 0;
+}
+
+.date{
+	margin: 0.45em 0 0 1em;
+}
+
+.time{
+	margin: 0.45em 0 0 1em;
+}
+
+.all-seat,
+.date,
+.time{
+	float: left;
+}
+
+.txt{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1em;
+	font-size: 0.5em;
+	font-weight: normal;
+	color: black;
+
+}
+
+.ticket-logo{
+	position: relative;
+	width: 2.6em;
+	height: 2.6em;
+	margin: 0 auto;
+    align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.number{
+	text-align: center;
+}
+
+.number-seat{
+	margin: 0.9em 0 0 ;
+	font-size: 2.5em;
+}
+
+.numberlabel{
+	margin: 0 0 0 ;
+	display: block;
+	color: #919b9b;
+	font-weight: bold;
+}
+
+
+
+/*----navbar----*/
+header {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #fff;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.logo_img{
+    height: 70px;
+    width: 70px;
+    padding: 10px 20px;
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li a {
+    list-style: none;
+    color: black;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: 0.2s;
+    margin: 0 5px;
+    text-decoration: none;
+}
+header nav ul li a:hover{
+    color: white;
+    background: black;
+}
+header li{
+    text-decoration: none;
+    list-style: none;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+    border-bottom-color: black;
+}
+.hamburger {
+    cursor: pointer;
+    display: none;
+    padding: 10px;
+    margin: 10px;
+}
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 0;
+    background: white;
+    
+}
+
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        left: -100%;
+        background: white;
+        padding: 0px;
+        transition: 0.3s;
+        
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+    }
+    header nav ul li a {
+        margin: 0px 0;
+        background: #fff;
+    }
+    body {
+        padding: 0rem 0;
+    }
+
+    .login-card {
+        position: static;
+        width: 280px;
+        padding: 2rem;
+        
+    }
+    .login-card input[type="text"],
+    .login-card input[type="password"],
+    .login-card input[type="email"] {
+    width: 70%;
+    }
+}
